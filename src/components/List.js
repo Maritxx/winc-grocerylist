@@ -1,27 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 
 import ListItem from "./ListItem";
 
-function List() {
-    const [groceryItems, setGroceryItems] = useState([
-        { id: 1, title: "Apples"},
-        { id: 2, title: "Oranges"},
-        { id: 3, title: "Bananas"}
-    ]);
-
-    function handleClick(groceryItem) {
-        console.log(groceryItem.title)
+function List(props) {
+    function handleClick(listItem) {
+        console.log(listItem)
     }
 
     return (
         <div>
             <ul>
-                {groceryItems.map((groceryItem) => { 
+                {props.listItems.map((listItem) => { 
                     return (
                     <ListItem 
-                        title={groceryItem.title}
-                        key={groceryItem.id}
-                        clickItem={() => handleClick(groceryItem)}
+                        title={listItem.title}
+                        key={listItem.id}
+                        clickItem={() => handleClick(listItem)}
                     />
                 )})}
             </ul>
