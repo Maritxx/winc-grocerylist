@@ -2,15 +2,9 @@ import React, {useState} from "react";
 
 import List from "./List"; 
 
-function GroceryList() {
-    const [groceryItems, setGroceryItems] = useState([
-        { id: 1, title: "Apples"},
-        { id: 2, title: "Oranges"},
-        { id: 3, title: "Bananas"}
-    ]);
-
+function GroceryList(props) {
     return (
-        <List listItems={groceryItems} />
+        <List items={props.items} onItemClick={props.onItemClick} />
     )
 }
 

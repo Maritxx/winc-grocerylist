@@ -1,13 +1,11 @@
 import React from "react";
 
-import GroceryList from "./components/GroceryList.js";
-import ShoppingCart from "./components/ShoppingCart.js";
+import Container from "./components/Container";
 
 function App() {
   return (
     <div>
-		<GroceryList />
-		<ShoppingCart />
+		<Container />
     </div>
   );
 }

@@ -3,19 +3,15 @@ import React from "react";
 import ListItem from "./ListItem";
 
 function List(props) {
-    function handleClick(listItem) {
-        console.log(listItem)
-    }
-
     return (
         <div>
             <ul>
-                {props.listItems.map((listItem) => { 
+                {props.items.map((item) => { 
                     return (
                     <ListItem 
-                        title={listItem.title}
-                        key={listItem.id}
-                        clickItem={() => handleClick(listItem)}
+                        title={item.title}
+                        key={item.id}
+                        onItemClick={() => props.onItemClick(item)}
                     />
                 )})}
             </ul>

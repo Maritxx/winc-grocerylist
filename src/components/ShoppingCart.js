@@ -2,13 +2,9 @@ import React, {useState} from "react";
 
 import List from "./List"; 
 
-function ShoppingCart() {
-    const [shoppingListItems, setShoppingListItems] = useState([
-        { id: 1, title: "Apples"},
-    ]);
-
+function ShoppingCart(props) {
     return (
-        <List listItems={shoppingListItems} />
+        <List items={props.items} />
     )
 }
 
