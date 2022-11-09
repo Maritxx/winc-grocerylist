@@ -11,14 +11,23 @@ function Container() {
     ]);
 
     const [cartItems, setCartItems] = useState([
-        { id: 1, title: "Apples"},
+        { id: 1, title: "Apples", amount: 1},
     ]);
 
-    function addItemToCart(item) {
-        console.log(item)
+    function addItemToCart(e) {
+        setCartItems((cartItems) => {
+            return ([...cartItems, {id: (cartItems.length + 1), title: e.target.innerText, amount: 1}])
+        })
+
+        const itemAlreadyInCart = cartItems.find((item) => {
+           return item.title === e.target.innerText
+        })
+
+        console.log(itemAlreadyInCart);
     }
     
     return (
+
     <div>
         <GroceryList items={groceryItems} onItemClick={addItemToCart} />
         <ShoppingCart items={cartItems} />

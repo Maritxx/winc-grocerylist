@@ -9,9 +9,9 @@ function List(props) {
                 {props.items.map((item) => { 
                     return (
                     <ListItem 
-                        title={item.title}
+                        item={item}
                         key={item.id}
-                        onItemClick={() => props.onItemClick(item)}
+                        onItemClick={props.onItemClick}
                     />
                 )})}
             </ul>

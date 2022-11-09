@@ -2,11 +2,14 @@ import React from "react";
 
 function ListItem(props) {
     return (
-        <li key={props.id}
+        <li key={props.item.id}
             className="grocery-item"
+            value={props.item.title}
             onClick={props.onItemClick}
+            amount={props.item.amount}
         >
-            {props.title}
+            {props.item.title}  
+            {props.item.amount}
         </li>        
     )
 
