@@ -4,8 +4,7 @@ import ListItem from "./ListItem";
 
 function List(props) {
     return (
-        <div>
-            <ul>
+            <ul className="grocery__list">
                 {props.items.map((item) => { 
                     return (
                     <ListItem 
@@ -15,7 +14,6 @@ function List(props) {
                     />
                 )})}
             </ul>
-        </div>
     )
 }
 

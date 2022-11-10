@@ -49,10 +49,10 @@ function Container() {
 
     
     return (
-    <div>
+    <main className="grocery__container">
         <GroceryList items={groceryItems} onItemClick={addItemToCart} onItemAdd={addNewGroceryItem} />
         <ShoppingCart items={cartItems} onButtonClick={emptyCart} />
-    </div>
+    </main>
     )
 }
 

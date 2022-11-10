@@ -5,11 +5,11 @@ import InputField from "./InputField";
 
 function GroceryList(props) {
     return (
-        <div>
+        <section className="grocery-list__section">
             <h2>Shopping List</h2>
             <InputField onItemAdd={props.onItemAdd}/>
             <List items={props.items} onItemClick={props.onItemClick} />
-        </div>
+        </section>
         
     )
 }
