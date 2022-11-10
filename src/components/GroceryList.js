@@ -1,10 +1,16 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 import List from "./List"; 
+import InputField from "./InputField";
 
 function GroceryList(props) {
     return (
-        <List items={props.items} onItemClick={props.onItemClick} />
+        <div>
+            <h2>Shopping List</h2>
+            <InputField onItemAdd={props.onItemAdd}/>
+            <List items={props.items} onItemClick={props.onItemClick} />
+        </div>
+        
     )
 }
 

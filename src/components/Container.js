@@ -40,10 +40,17 @@ function Container() {
         setCartItems([])
     };
 
+
+    function addNewGroceryItem(itemName) {
+        setGroceryItems((groceryItems) => {
+            return ([...groceryItems, {id: (groceryItems.length + 1), title: itemName}])
+        });
+    };
+
     
     return (
     <div>
-        <GroceryList items={groceryItems} onItemClick={addItemToCart} />
+        <GroceryList items={groceryItems} onItemClick={addItemToCart} onItemAdd={addNewGroceryItem} />
         <ShoppingCart items={cartItems} onButtonClick={emptyCart} />
     </div>
     )
