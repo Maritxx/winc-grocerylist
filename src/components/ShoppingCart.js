@@ -4,7 +4,10 @@ import List from "./List";
 
 function ShoppingCart(props) {
     return (
-        <List items={props.items} />
+        <div>
+            <button onClick={props.onButtonClick}>Empty the shopping cart</button>
+            <List items={props.items} />
+        </div>
     )
 }
 

@@ -14,6 +14,7 @@ function Container() {
         { id: 1, title: "Apples", amount: 1},
     ]);
 
+
     function addItemToCart(e) {
         const itemAlreadyInCart = cartItems.some((item) => {
            return item.title === e.target.innerText
@@ -33,12 +34,17 @@ function Container() {
             });
         };
     };
+
+
+    function emptyCart() {
+        setCartItems([])
+    };
+
     
     return (
-
     <div>
         <GroceryList items={groceryItems} onItemClick={addItemToCart} />
-        <ShoppingCart items={cartItems} />
+        <ShoppingCart items={cartItems} onButtonClick={emptyCart} />
     </div>
     )
 }
