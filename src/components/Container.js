@@ -15,16 +15,24 @@ function Container() {
     ]);
 
     function addItemToCart(e) {
-        setCartItems((cartItems) => {
-            return ([...cartItems, {id: (cartItems.length + 1), title: e.target.innerText, amount: 1}])
-        })
-
-        const itemAlreadyInCart = cartItems.find((item) => {
+        const itemAlreadyInCart = cartItems.some((item) => {
            return item.title === e.target.innerText
-        })
+        });
 
-        console.log(itemAlreadyInCart);
-    }
+        if (itemAlreadyInCart) {
+            setCartItems(cartItems.map((item) => {
+                if (item.title === e.target.innerText) {
+                    return {...item, amount: item.amount + 1}
+                } else {
+                    return item
+                }
+            }));            
+        } else {
+            setCartItems((cartItems) => {
+                return ([...cartItems, {id: (cartItems.length + 1), title: e.target.innerText, amount: 1}])
+            });
+        };
+    };
     
     return (
 
