@@ -4,15 +4,9 @@ import GroceryList from "./GroceryList";
 import ShoppingCart from "./ShoppingCart";
 
 function Container() {
-    const [groceryItems, setGroceryItems] = useState([
-        { id: 1, title: "Apples"},
-        { id: 2, title: "Oranges"},
-        { id: 3, title: "Bananas"}
-    ]);
+    const [groceryItems, setGroceryItems] = useState([]);
 
-    const [cartItems, setCartItems] = useState([
-        { id: 1, title: "Apples", amount: 1},
-    ]);
+    const [cartItems, setCartItems] = useState([]);
 
 
     function addItemToCart(e) {
@@ -42,9 +36,13 @@ function Container() {
 
 
     function addNewGroceryItem(itemName) {
-        setGroceryItems((groceryItems) => {
-            return ([...groceryItems, {id: (groceryItems.length + 1), title: itemName}])
-        });
+        if (itemName == "") {
+            alert("The input can't be empty")
+        } else {
+            setGroceryItems((groceryItems) => {
+                return ([...groceryItems, {id: (groceryItems.length + 1), title: itemName}])
+            });            
+        };
     };
 
     
