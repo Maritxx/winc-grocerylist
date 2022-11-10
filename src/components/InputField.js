@@ -4,7 +4,7 @@ function InputField(props) {
     const [newGrocery, setNewGrocery] = useState("");
 
     return (
-        <form>
+        <form className="input-form__container">
             <input 
                 type="text" 
                 placeholder="Add a grocery item" 

@@ -58,6 +58,18 @@ header {
     align-items: center;
 }
 
+.input-form__container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input-form__container input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+}
+
 .grocery__list {
     list-style: none;
     max-width: 100%;
@@ -69,6 +81,10 @@ header {
     display: block;
 }
 
+.grocery-item ~ .grocery-item {
+    margin-top: 5px;
+}
+
 .shopping-cart__section .grocery-item span:first-child {
     display: flex;
     justify-content: space-between;
@@ -76,10 +92,12 @@ header {
 
 .grocery-list__section .grocery-item:nth-child(even) {
     background-color: #f5b8c3;
+    cursor: pointer;
 }
 
 .grocery-list__section .grocery-item:nth-child(odd) {
     background-color: #e28683;
+    cursor: pointer;
 }
 
 .shopping-cart__section .grocery-item:nth-child(even) {
@@ -88,6 +106,14 @@ header {
 
 .shopping-cart__section .grocery-item:nth-child(odd) {
     background-color: #b5d7e4;
+}
+
+button {
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: lightgray;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 
